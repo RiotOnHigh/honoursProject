@@ -1,0 +1,41 @@
+<form #itemForm="ngForm" (ngSubmit)="onSubmit(itemForm)">
+     <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="shopService.selectedItem.$key">
+    <div class="form-group">
+        <label>Name: </label>
+        <input class="form-control" name="name" #name="ngModel" [(ngModel)]="shopService.selectedItem.name" placeholder="Name Of Record" required>
+    </div>
+    <div class="form-group">
+        <label>Description: </label>
+        <input class="form-control" name="description" #description="ngModel" [(ngModel)]="shopService.selectedItem.description" placeholder="Description Of Record" required>
+    </div>
+    <div class="form-group">
+        <label>Price: </label>
+        <div class="input-group">
+            <input class="form-control" name="price" #price="ngModel" [(ngModel)]="shopService.selectedItem.price" placeholder="Price Of Record" required>
+        </div>
+     </div>
+    <div class="form-group">
+        <label>Stock Count: </label>
+        <input class="form-control" name="count" #count="ngModel" [(ngModel)]="shopService.selectedItem.count" placeholder="How many of this Record do you have?" required>
+    </div>
+    <div class="form-group">
+      <label>Record Type: </label>
+      <select class="form-control" name="type" #type="ngModel" [(ngModel)]="shopService.selectedItem.type" required>
+        <option value="12">12"</option>
+        <option value="10">10"</option>
+        <option value="7">7"</option>
+      </select>
+    </div>
+  <br>
+  <br>
+  <br>
+    <div class="form-group">
+        <button class="btn btn-default" type="submit" [disabled]="!itemForm.valid">
+         <!-- <i class="fa fa-floppy-o"></i>-->
+           Submit</button>
+        <button class="btn btn-default" type="button" (click)="resetForm(itemForm)">
+          <!-- <i class="fa fa-repeat"></i> -->
+           Reset</button>
+  </div>
+</form>
+

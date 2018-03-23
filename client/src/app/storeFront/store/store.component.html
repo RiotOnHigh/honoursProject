@@ -1,0 +1,39 @@
+<div id="shopItems" class="bg-1">
+  <div class="container">
+    <h3 class="text-center">Records You Could Own...</h3>
+    <p class="text-center">Grab them quick</p>
+
+    <br/>
+    <br/>
+
+    <div class="row text-center">
+      <span *ngFor="let item of itemList">
+        <span *ngIf="item.count > 0; else other_content">
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <img src="assets/record.png" alt="Record" width="400" height="300">
+          <p><strong>{{item.name}}</strong></p>
+          <p><small>{{item.description}}</small></p>
+          <p>{{item.price | currency:'GBP'}}</p>
+          <span *ngIf="auth.isLoggedIn()"><button class="btn btn-default" (click)="addToCart(item)">Buy</button></span>
+        </div>
+      </div>
+          </span>
+        <ng-template #other_content>
+        <div class="col-sm-4">
+          <div class="thumbnail">
+            <img style="filer: grayscale(100%); " src="assets/record.png" alt="Record" width="400" height="300">
+            <p><strong>{{item.name}}</strong></p>
+            <p><small>{{item.description}}</small></p>
+            <p>{{item.price | currency:'GBP'}}</p>
+            <h3>SOLD OUT</h3>
+          </div>
+        </div>
+        </ng-template>
+        </span>
+  </div>
+</div>
+</div>
+
+
+

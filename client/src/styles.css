@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.navbar {
+  font-family: Montserrat, sans-serif;
+  margin-bottom: 0;
+  background-color: gold;
+  border: 0;
+  font-size: 11px !important;
+  letter-spacing: 4px;
+  opacity: 0.9;
+}
+
+.navbar button {
+
+  padding: 10px 20px;
+  background-color: #333;
+  color: #f1f1f1;
+  border-radius: 0;
+  transition: .2s;
+
+}
+
+.navbar li a, .navbar .navbar-brand {
+  color: black !important;
+}
+.navbar-nav li a:hover {
+  color: black !important;
+}
+.navbar-nav li.active a {
+  color: black !important;
+  background-color: #29292c !important;
+}
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+}
+
+
+body {
+  font: 400 15px/1.8 Lato, sans-serif;
+  padding: 15px;
+  color: #777;
+}
+
+.container {
+  padding: 80px 120px;
+  margin:0px auto;
+}
+
+
+input.ng-invalid.ng-dirty{
+    border: 1px solid red;
+}
+button:hover,a.btn:hover{
+    cursor: pointer;
+   }

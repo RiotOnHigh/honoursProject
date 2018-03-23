@@ -1,0 +1,23 @@
+<div id="cartItems" class="bg-1">
+  <div class="container">
+    <h3 class="text-center">Your Basket...</h3>
+    <br/>
+    <div class="row text-center">
+      <span *ngFor="let item of cartList">
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <img src="assets/record.png" alt="Record" width="400" height="300">
+          <p><strong>{{item.name}}</strong></p>
+          <p>{{item.price | currency:'GBP':true}}</p>
+          <p>{{item.count}}</p>
+          <button class="btn btn-default" (click)="removeItem(item.$key)">Remove</button>
+        </div>
+      </div>
+        </span>
+    </div>
+    </div>
+  <div class="container">
+   <span *ngIf="cartList.length > 0"><div class="right" id="paypal-checkout-btn"></div></span>
+  </div>
+</div>
+

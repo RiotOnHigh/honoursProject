@@ -1,0 +1,14 @@
+<h6 class="text-center">Items Register</h6><br/>
+<table class="table table-sm table-hover">
+  <tr *ngFor="let item of postList">
+    <td>{{item.title}}</td>
+    <td>
+      <a class="btn" (click)="onEdit(item)">
+        <i class="fa fa-pencil-square-o"></i>
+      </a>
+      <a class="btn" (click)="onDelete(item.$key)">
+        <i class="fa fa-trash-o"></i>
+      </a>
+    </td>
+  </tr>
+</table>
